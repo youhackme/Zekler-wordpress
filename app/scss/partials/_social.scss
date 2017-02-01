@@ -1,0 +1,20 @@
+.social-actions {
+  padding: 25px 0 0px;
+  color: $gray-light;
+  div {
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  .fa {
+    font-size: 20px;
+  }
+
+  .fa:not(:first-child) {
+    margin-left: 5px;
+  }
+  .fa:first-child {
+    margin-right: 5px;
+  }
+}
+

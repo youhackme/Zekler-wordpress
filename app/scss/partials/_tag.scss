@@ -1,0 +1,28 @@
+span.tag {
+  border: 1px solid #666666;
+  font-size: 8px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  letter-spacing: .5px;
+  margin: 0 2px;
+  padding: 4px;
+  vertical-align: middle;
+
+  &--facebook {
+    @extend .tag;
+    border: 1px solid #0069ff;
+    color: #0069ff !important;
+  }
+  &--windows {
+    @extend .tag;
+    border: 1px solid red;
+    color: red !important;
+  }
+  &--other {
+    @extend .tag;
+    border: 1px solid #009061;
+    color: #009061 !important;
+  }
+}
+
+

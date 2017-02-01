@@ -1,0 +1,306 @@
+// Bootstrap customization
+@import "variables";
+
+$bootstrap-sass-path: '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/';
+// Core variables and mixins
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+
+// Core CSS
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Components
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+
+// Components w/ JavaScript
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+
+// Utility classes
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+//@import "bootstrap";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/theme";
+
+// Custom components from minimalism theme
+@import 'partials/fontZeklerPN';
+@import 'partials/fontZeklerDP';
+@import 'partials/tag';
+@import 'partials/social';
+@import 'partials/share';
+@import 'partials/featured';
+@import 'partials/footer';
+@import 'partials/search';
+@import 'partials/response';
+@import 'partials/modal';
+@import 'partials/sidebar';
+@import 'partials/button';
+@import 'partials/icons';
+
+// Customize container
+@media (min-width: 768px) {
+  .container-small {
+    max-width: 760px;
+  }
+
+  .bigger-col-md-8 {
+    width: 100%;
+  }
+
+  .smaller-col-md-4 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-small {
+    max-width: 760px;
+  }
+
+  .bigger-col-md-8 {
+    width: 70%;
+  }
+
+  .smaller-col-md-4 {
+    width: 30%;
+  }
+
+  .remote-3-percent {
+    width: 97%;
+  }
+}
+
+.container, .container-fluid {
+  &.darker-bg {
+    background-color: #FAFAFA;
+  }
+}
+
+a {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logo-block {
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 991px) {
+  .logo-block a img {
+    margin: 0 auto;
+  }
+}
+
+.navigation-block {
+  margin-bottom: 20px;
+}
+
+//Blog post page
+
+article.article-block {
+  font-family: "ZeklerDP", Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  font-style: normal;
+  padding: 10px 0;
+}
+
+.meta-block {
+  font-family: "ZeklerPN", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+  &__author-name {
+    font-size: 15px;
+    line-height: 1;
+    color: #000000;
+    font-weight: 400;
+  }
+
+  .middotDivider::after {
+    content: "·";
+    margin: 0 3px;
+    color: rgba(0, 0, 0, .8);
+  }
+}
+
+article.article-block {
+  p {
+    font-family: "ZeklerDP", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    line-height: 33px;
+    &::selection {
+      background: #ffb7b7;
+    }
+  }
+  b, strong {
+    font-weight: 600;
+  }
+
+  figure {
+    display: inline-block;
+    margin: 10px;
+  }
+  figure img {
+    vertical-align: top;
+  }
+  figure figcaption {
+    text-align: center;
+    font-family: "ZeklerPN", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 100;
+    margin-top: 7px;
+    color: $gray-light;
+  }
+  figure + p {
+    margin-top: 28px;
+  }
+
+  p + .list, h1 + .list, h2 + .list, h3 + .list, h4 + .list, h5 + .list, h6 + .list {
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+    margin-top: 29px;
+  }
+
+  h1 + .list, h2 + .list, h3 + .list, h4 + .list, h5 + .list, h6 + .list {
+    margin-top: 10px;
+  }
+
+  .list li {
+    margin-bottom: 14px;
+    margin-left: 20px;
+  }
+
+  .list + h4, p + h4 {
+    margin-top: 30px;
+  }
+
+  .list + h3, p + h3 {
+    margin-top: 46px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+}
+
+.tags-block {
+  a {
+    color: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .05);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 5px 10px;
+  }
+
+  a:hover {
+    background: rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .6);
+  }
+}
+
+div.comments-block {
+  margin: 80px 0;
+}
+
+.related-block {
+
+  &__article-detail {
+    background: #ffffff;
+    padding: 5px;
+  }
+
+  &--default, &--sidebar {
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .05);
+    border: 1px solid rgba(0, 0, 0, .04);
+  }
+  &--default {
+    margin: 40px 0;
+  }
+
+  &--sidebar {
+    margin: 20px 0;
+  }
+
+  a:link {
+    color: rgba(0, 0, 0, .44);
+  }
+
+  &__title {
+    font-family: 'ZeklerPN';
+    font-style: normal;
+    font-weight: 700;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+div.comments-block > div {
+  padding-bottom: 20px;
+}
+
+.biography-block {
+  span {
+    margin-left: 5px;
+    font-family: 'ZeklerPN';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+.biography-block > div {
+  margin-bottom: 20px;
+}
+
+pre {
+  border: none;
+  border-radius: 0;
+  padding: 20px;
+  margin:20px 0;
+  font-size: 16px;
+}
+
+
+
+
