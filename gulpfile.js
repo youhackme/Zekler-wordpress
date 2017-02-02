@@ -73,7 +73,7 @@ gulp.task('sass', function () {
         .pipe(sass()) // Using gulp-sass
         .pipe(rename({suffix: '.min'}))
         .pipe(autoprefixer(autoprefixerOptions))
-       // .pipe(minifyCss())
+        .pipe(minifyCss())
         .pipe(gulp.dest('build/css/'))
 });
 
@@ -104,6 +104,7 @@ gulp.task('javascript', function () {
     return gulp.src(js.in)
         .pipe(uglify())
         .pipe(concat('all.js'))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(js.out));
 });
 
