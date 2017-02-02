@@ -1,0 +1,21 @@
+image: php56
+stages:
+  - deploy
+before_script:
+  # load SSH Key to allow rsync to production server
+  - eval $(ssh-agent -s)
+  - ssh-add /root/.ssh/id_rsa
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - php -v
+demo:
+  stage: deploy
+  script:
+    # Push source files to server
+    - rsync -rave ssh  ./ hyder@163.172.90.99:/var/www/zekler
+
+  environment:
+    name: WIP
+    url: http://zekler.darktips.com/
+  only:
+    - master
