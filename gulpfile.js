@@ -136,7 +136,7 @@ gulp.task('image', function () {
 
 
 // default task
-gulp.task('dev', ['sass', 'javascript', 'fonts', 'bootstrap', 'img'], function () {
+gulp.task('dev', ['sass', 'javascript', 'fonts', 'bootstrap', 'img', 'image'], function () {
     gulp.watch(scss.watch, ['sass']);
     gulp.watch(js.watch, ['javascript']);
 });
