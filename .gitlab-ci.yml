@@ -1,4 +1,4 @@
-image: booh
+image: php56
 stages:
   - deploy
 before_script:
