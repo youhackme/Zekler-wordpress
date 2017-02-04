@@ -140,3 +140,5 @@ gulp.task('dev', ['sass', 'javascript', 'fonts', 'bootstrap', 'img', 'image'], f
     gulp.watch(scss.watch, ['sass']);
     gulp.watch(js.watch, ['javascript']);
 });
+
+gulp.task('gitlab', ['sass', 'javascript', 'fonts', 'bootstrap', 'img', 'image']);
