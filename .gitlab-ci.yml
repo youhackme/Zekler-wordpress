@@ -1,4 +1,4 @@
-image: prestashit1
+image: booh
 stages:
   - deploy
 before_script:
