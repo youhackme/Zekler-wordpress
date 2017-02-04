@@ -12,7 +12,7 @@ demo:
   stage: deploy
   script:
     - npm install
-    - gulp image
+    - gulp
     # Push source files to server
     - rsync -rave ssh  ./ hyder@163.172.90.99:/var/www/zekler
 
