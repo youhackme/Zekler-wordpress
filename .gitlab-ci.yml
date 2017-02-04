@@ -1,4 +1,4 @@
-image: php56
+image: prestashit1
 stages:
   - deploy
 before_script:
