@@ -1,4 +1,4 @@
-image: php56
+image: wordpress
 stages:
   - deploy
 before_script:
