@@ -5,7 +5,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <?php wp_head(); ?>
 </head>
 <body>
@@ -26,7 +25,6 @@
                     </label>
                     <input id="search" name="search" placeholder="Search.." autocomplete="off">
                 </form>
-
             </div>
         </div>
     </div>
@@ -43,189 +41,62 @@
     </div>
     <main>
 
-        <div class="row articles-block">
-            <?php
-            if (have_posts()) {
-                while (have_posts()) {
-                    ?>
-                    <h2><?php the_title(); ?></h2>
-                    <small><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></small>
-                    <section class="col-md-4 articles-block__tip">
-                        <article>
-                            <a href="#"><img class="img-responsive" alt="photo"
-                                             src="<?php echo get_bloginfo('template_directory'); ?>/build/img/1.jpg"></a>
-                            <h4><a href="#"><?php the_title(); ?></a>
-                                <small><a href="#" class="tag--windows">Windows</a></small>
-                            </h4>
-                        </article>
-                        <footer class="meta">
-
-                            <div class="articles-block__totallove">
-                                <span class=" icon-heart-o" aria-hidden="true"></span>15
-                            </div>
-                            <div class="articles-block__totalcomments">
-                                <span class=" icon-comment-o" aria-hidden="true"></span>10
-                            </div>
-                            <div class="articles-block__author">
-                                <span>By Hyder Bangash</span>
-                            </div>
-                        </footer>
-                    </section>
-                    <?php
-                }
-            }
-            ?>
-        </div>
-
-        <div class="row articles-block">
+        <?php query_posts('posts_per_page=12'); ?>
+        <?php $totalPost = 0; ?>
+        <?php while (have_posts()) :
+            the_post(); ?>
+            <?php $totalPost++; ?>
+            <?php if ($totalPost % 3 == 0) { ?>
+            <div class="row articles-block">
+        <?php } ?>
             <section class="col-md-4 articles-block__tip">
                 <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/1.jpg"></a>
-                    <h4><a href="#">How to take a screenshot on Windows 10</a>
-                        <small><a href="#" class="tag--windows">Windows</a></small>
-                    </h4>
-                </article>
-                <footer class="meta">
-
-                    <div class="articles-block__totallove">
-                        <span class=" icon-heart-o" aria-hidden="true"></span>15
-                    </div>
-                    <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
-                    </div>
-
-
-                    <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
-                    </div>
-                </footer>
-            </section>
-            <section class="col-md-4 articles-block__tip">
-                <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/2.jpg"></a>
-                    <h4><a href="#">CC vs BCC: Learn the difference when sending an email</a>
-                        <small><a href="#" class="tag--facebook">Email</a></small>
-                    </h4>
-                </article>
-                <footer class="meta">
-
-                    <div class="articles-block__totallove">
-                        <span class=" icon-heart-o" aria-hidden="true"></span>15
-                    </div>
-                    <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
-                    </div>
-
-
-                    <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
-                    </div>
-                </footer>
-            </section>
-            <section class="col-md-4 articles-block__tip">
-                <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/3.jpg"></a>
-                    <h4><a href="#">How to delete friends on Facebook in Bulk </a>
-                        <small><a href="#" class="tag--other">Facebook</a></small>
+                    <a href="#">
+                        <?php if (has_post_thumbnail()) {
+                            the_post_thumbnail('medium', ['class' => 'img-responsive']);
+                        } ?>
+                    </a>
+                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <?php
+                        $categories = get_the_category();
+                        $slug = $categories[0]->slug;
+                        $catName = $categories[0]->cat_name;
+                        ?>
+                        <small>
+                            <span class="tag--<?php echo $slug; ?>"> <?php
+                                echo $catName;
+                                ?>
+                            </span>
+                        </small>
                     </h4>
                 </article>
                 <footer class="meta">
                     <div class="articles-block__totallove">
                         <span class=" icon-heart-o" aria-hidden="true"></span>15
                     </div>
-
                     <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
+                        <span class=" icon-comment-o" aria-hidden="true"></span> <?php comments_number(0, 1, '%'); ?>
                     </div>
-
                     <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
+                        <span>By <?php the_author_posts_link(); ?></span>
                     </div>
                 </footer>
             </section>
-        </div>
-        <div class="row articles-block">
-            <section class="col-md-4 articles-block__tip">
-                <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/1.jpg"></a>
-                    <h4><a href="#">How to take a screenshot on Windows 10</a>
-                        <small><a href="#" class="tag--windows">Windows</a></small>
-                    </h4>
-                </article>
-                <footer class="meta">
 
-                    <div class="articles-block__totallove">
-                        <span class=" icon-heart-o" aria-hidden="true"></span>15
-                    </div>
-                    <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
-                    </div>
+            <?php if ($totalPost % 3 == 0) { ?>
+            </div>
+        <?php } ?>
 
+        <?php endwhile; ?>
+</div>
 
-                    <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
-                    </div>
-                </footer>
-            </section>
-            <section class="col-md-4 articles-block__tip">
-                <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/2.jpg"></a>
-                    <h4><a href="#">CC vs BCC: Learn the difference when sending an email</a>
-                        <small><a href="#" class="tag--facebook">Email</a></small>
-                    </h4>
-                </article>
-                <footer class="meta">
+</main>
 
-                    <div class="articles-block__totallove">
-                        <span class=" icon-heart-o" aria-hidden="true"></span>15
-                    </div>
-                    <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
-                    </div>
-
-
-                    <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
-                    </div>
-                </footer>
-            </section>
-            <section class="col-md-4 articles-block__tip">
-                <article>
-                    <a href="#"><img class="img-responsive" alt="photo"
-                                     src="<?php echo get_bloginfo('template_directory'); ?>/build/img/3.jpg"></a>
-                    <h4><a href="#">How to delete friends on Facebook in Bulk </a>
-                        <small><a href="#" class="tag--other">Facebook</a></small>
-                    </h4>
-                </article>
-                <footer class="meta">
-
-                    <div class="articles-block__totallove">
-                        <span class=" icon-heart-o" aria-hidden="true"></span>15
-                    </div>
-
-                    <div class="articles-block__totalcomments">
-                        <span class=" icon-comment-o" aria-hidden="true"></span>10
-                    </div>
-
-                    <div class="articles-block__author">
-                        <span>By Hyder Bangash</span>
-                    </div>
-
-                </footer>
-            </section>
-        </div>
-    </main>
-
-    <div class="container">
-        <div class="row text-center load-more-block">
-            <a class="btn btn-default btn-lg btn-outline">Show Me More Tips</a>
-        </div>
+<div class="container">
+    <div class="row text-center load-more-block">
+        <a class="btn btn-default btn-lg btn-outline">Show Me More Tips</a>
     </div>
+</div>
 </div>
 
 
