@@ -8,6 +8,7 @@ before_script:
   - mkdir -p ~/.ssh
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   - php -v
+  - - apt-get install -y libjpeg-dev libpng12-dev
 demo:
   stage: deploy
   script:
