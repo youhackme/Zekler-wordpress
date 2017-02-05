@@ -1,4 +1,4 @@
-a.tag {
+.tag {
   border: 1px solid #666666;
   font-size: 8px;
   text-transform: uppercase;
@@ -8,20 +8,26 @@ a.tag {
   padding: 4px;
   vertical-align: middle;
 
-  &--facebook {
+  &--internet {
     @extend .tag;
     border: 1px solid #0069ff;
     color: #0069ff !important;
   }
-  &--windows {
+  &--operating-system {
     @extend .tag;
     border: 1px solid red;
     color: red !important;
   }
-  &--other {
+  &--software-2 {
     @extend .tag;
     border: 1px solid #009061;
     color: #009061 !important;
+  }
+
+  &--mobile {
+    @extend .tag;
+    border: 1px solid #213190;
+    color: #213190 !important;
   }
 }
 
