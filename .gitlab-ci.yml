@@ -1,4 +1,4 @@
-image: prestashit
+image: darktips
 stages:
   - deploy
 before_script:
@@ -21,3 +21,4 @@ demo:
     url: http://zekler.darktips.com/
   only:
     - master
+    - wordpress
