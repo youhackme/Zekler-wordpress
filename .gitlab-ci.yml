@@ -1,4 +1,4 @@
-image: wordpress
+image: prestashit
 stages:
   - deploy
 before_script:
