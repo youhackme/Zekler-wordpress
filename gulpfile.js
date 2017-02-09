@@ -6,7 +6,7 @@ var minifyCss = require("gulp-minify-css");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 const eslint = require('gulp-eslint');
-var image = require('gulp-image');
+
 
 var autoprefixerOptions = {
     browsers: ['last 5 versions', '> 1%']
@@ -117,22 +117,6 @@ gulp.task('lint', function () {
 });
 
 
-// Image optimisator
-gulp.task('image', function () {
-    return gulp.src('app/img/**/*')
-        .pipe(image({
-            pngquant: true,
-            optipng: true,
-            zopflipng: true,
-            jpegRecompress: true,
-            jpegoptim: true,
-            mozjpeg: true,
-            gifsicle: true,
-            svgo: true,
-            concurrent: 10
-        }))
-        .pipe(gulp.dest('./build/img/'));
-});
 
 
 // default task
@@ -141,4 +125,4 @@ gulp.task('dev', ['sass', 'javascript', 'fonts', 'bootstrap', 'img'], function (
     gulp.watch(js.watch, ['javascript']);
 });
 
-gulp.task('gitlab', ['sass', 'javascript', 'fonts', 'bootstrap', 'img', 'image']);
+gulp.task('gitlab', ['sass', 'javascript', 'fonts', 'bootstrap', 'img']);
