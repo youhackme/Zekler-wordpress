@@ -24,7 +24,10 @@ get_header();
                                 the_post_thumbnail('medium', ['class' => 'img-responsive']);
                             } ?>
                         </a>
-                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <h4>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
                             <?php
                             $categories = get_the_category();
                             $slug = $categories[0]->slug;
@@ -55,8 +58,8 @@ get_header();
                 </div>
             <?php } ?>
             <?php endwhile; ?>
-    </div>
-    </main>
+
+        </main>
     <div class="container">
         <div class="row text-center load-more-block">
             <a class="btn btn-default btn-lg btn-outline">Show Me More Tips</a>
