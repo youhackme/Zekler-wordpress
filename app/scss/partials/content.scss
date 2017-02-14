@@ -50,11 +50,15 @@ article.article-block {
     margin-top: 29px;
   }
 
-  p + h2 {
-    margin-top: 54px;
+  p + h2, ol + h3 {
+    margin-top: 60px;
   }
-  p + h3 {
+  p + h3, ol + h3 {
     margin-top: 56px;
+  }
+
+  p + ul {
+    margin-top: 30px;
   }
 
   p + .list, h1 + .list, h2 + .list, h3 + .list, h4 + .list, h5 + .list, h6 + .list {

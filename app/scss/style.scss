@@ -77,7 +77,6 @@ $bootstrap-sass-path: '../../node_modules/bootstrap-sass/assets/stylesheets/boot
 @import 'partials/related';
 @import 'partials/biography';
 
-
 a {
   &:hover {
     text-decoration: none;
@@ -98,8 +97,6 @@ a {
   margin-bottom: 20px;
 }
 
-
-
 .meta-block {
   font-family: "ZeklerPN", Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -118,8 +115,6 @@ a {
     color: rgba(0, 0, 0, .8);
   }
 }
-
-
 
 .tags-block {
   a {
@@ -144,15 +139,42 @@ div.comments-block > div {
   padding-bottom: 20px;
 }
 
-
 pre {
   border: none;
   border-radius: 0;
   padding: 20px;
-  margin:20px 0;
+  margin: 20px 0;
   font-size: 16px;
 }
 
+img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
 
+img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
 
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+a img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
