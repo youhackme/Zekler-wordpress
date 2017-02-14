@@ -68,26 +68,13 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="comments-block">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="comment">Your comment:</label>
-                            <textarea class="form-control" id="comment" rows="3"
-                                      placeholder="Have something to say?">
-                            </textarea>
-                        </div>
 
-                        <div class="checkbox pull-left">
-                            <label class="text-muted">
-                                <input type="checkbox"> Notify me of replies
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-outline pull-right col-md-3 ">Answer
-                        </button>
-                    </form>
 
-                </div>
-
+				<?php
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+				?>
 
 				<?php
 				$args = [
@@ -136,8 +123,6 @@
 						<?php
 
 					}
-				} else {
-					echo 'No comments found.';
 				}
 				?>
 
