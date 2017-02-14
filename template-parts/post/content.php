@@ -66,37 +66,6 @@
         </div>
 
 
-        <div class="share-block text-center">
-            <div class="share-block__label text-muted">Share</div>
-            <div class="share-block__icons">
-                <div class="share-block__upvote">
-                    <a href="#">
-                        <i class=" icon-angle-up remove-padding" aria-hidden="true"></i>
-                        <i title="Show some love if you enjoyed this article"
-                           class=" icon-heart-o remove-padding"
-                           aria-hidden="true"></i>
-                        <div class="text-muted">24</div>
-                    </a>
-                </div>
-                <div>
-                    <a title="Share on Twitter" href="#">
-                        <i class=" icon-twitter icon-outline text-muted" aria-label="true"></i>
-                    </a>
-                    <div class="text-muted">10</div>
-                </div>
-                <div>
-                    <a title="Share on Facebook" href="#">
-                        <i class=" icon-facebook icon-outline text-muted" aria-hidden="true"></i>
-
-                    </a>
-                    <div class="text-muted">15</div>
-                </div>
-
-            </div>
-
-        </div>
-
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="comments-block">
