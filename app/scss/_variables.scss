@@ -10,7 +10,7 @@ $bootstrap-sass-asset-helper: false !default;
 
 $gray-base:              rgba(0, 0, 0, 0.9);
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray-dark:               rgba(0, 0, 0, 0.8);
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #8F8F8F; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
@@ -53,10 +53,10 @@ $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-$font-size-h1:            40px; // ~36px
-$font-size-h2:            38px; // ~30px
-$font-size-h3:            32px; // ~24px
-$font-size-h4:            24px; // ~18px
+$font-size-h1:            38px;
+$font-size-h2:            36px;
+$font-size-h3:            32px;
+$font-size-h4:            24px;
 $font-size-h5:            $font-size-base;
 $font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
 

@@ -1,0 +1,109 @@
+//Blog post page
+article.article-block {
+  font-family: "ZeklerDP", Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  font-style: normal;
+  padding: 10px 0;
+
+  p {
+    font-family: "ZeklerDP", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    line-height: 33px;
+    &::selection {
+      background: #ffb7b7;
+    }
+  }
+  b, strong {
+    font-weight: 600;
+  }
+
+  figure {
+    display: inline-block;
+    margin: 10px;
+  }
+  figure img {
+    vertical-align: top;
+  }
+  figure figcaption {
+    text-align: center;
+    font-family: "ZeklerPN", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 100;
+    margin-top: 7px;
+    color: $gray-light;
+  }
+  figure + p {
+    margin-top: 28px;
+  }
+
+  ul + figure, ul + p img {
+    margin-top: 43px;
+  }
+
+  h1 span.sectionnum, h2 span.sectionnum, h3 span.sectionnum, h4 span.sectionnum, h5 span.sectionnum, h6 span.sectionnum {
+    color: #cbcbcb;
+  }
+
+  p + p {
+    margin-top: 29px;
+  }
+
+  p + h2, ol + h3 {
+    margin-top: 60px;
+  }
+  p + h3, ol + h3 {
+    margin-top: 56px;
+  }
+
+  p + ul {
+    margin-top: 30px;
+  }
+
+  p + .list, h1 + .list, h2 + .list, h3 + .list, h4 + .list, h5 + .list, h6 + .list {
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+    margin-top: 29px;
+  }
+
+  h1 + .list, h2 + .list, h3 + .list, h4 + .list, h5 + .list, h6 + .list {
+    margin-top: 10px;
+  }
+
+  .list li {
+    margin-bottom: 14px;
+    margin-left: 20px;
+  }
+
+  .list + h4, p + h4 {
+    margin-top: 30px;
+  }
+
+  .list + h3 {
+    margin-top: 46px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  code {
+    padding: 2px 4px;
+    font-size: 85%;
+    color: $gray-dark;
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 4px;
+  }
+
+  pre code {
+    background-color: inherit;
+  }
+
+  + footer {
+    margin-top: 30px;
+  }
+
+}
+

@@ -1,0 +1,38 @@
+// Customize container
+@media (min-width: 768px) {
+  .container-small {
+    max-width: 760px;
+  }
+
+  .bigger-col-md-8 {
+    width: 100%;
+  }
+
+  .smaller-col-md-4 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-small {
+    max-width: 760px;
+  }
+
+  .bigger-col-md-8 {
+    width: 70%;
+  }
+
+  .smaller-col-md-4 {
+    width: 30%;
+  }
+
+  .remove-3-percent {
+    width: 97%;
+  }
+}
+
+.container, .container-fluid {
+  &.darker-bg {
+    background-color: #FAFAFA;
+  }
+}

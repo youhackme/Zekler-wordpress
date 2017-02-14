@@ -1,0 +1,23 @@
+ table {
+  border: 1px solid #f0f0f0;
+  margin-top: 50px;
+
+  th {
+    font-weight: 500;
+    padding: 1em;
+    border-bottom: 1px solid #f0f0f0;
+    background: #f0f0f0;
+  }
+
+  caption, td {
+    font-weight: normal;
+    text-align: left;
+  }
+
+  td {
+    padding: 0.8em 1em;
+    border: 1px solid #f0f0f0;
+  }
+
+}
+

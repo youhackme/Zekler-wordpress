@@ -1,0 +1,32 @@
+.related-block {
+
+  &__article-detail {
+    background: #ffffff;
+    padding: 5px;
+  }
+
+  &--default, &--sidebar {
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .05);
+    border: 1px solid rgba(0, 0, 0, .04);
+  }
+  &--default {
+    margin: 40px 0;
+  }
+
+  &--sidebar {
+    margin: 20px 0;
+  }
+
+  a:link {
+    color: rgba(0, 0, 0, .44);
+  }
+
+  &__title {
+    font-family: 'ZeklerPN';
+    font-style: normal;
+    font-weight: 700;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
