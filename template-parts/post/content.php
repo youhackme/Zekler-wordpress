@@ -28,7 +28,7 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
 			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'zekler' ),
 				get_the_title()
 			) );
 			$postID = get_the_ID();
@@ -68,7 +68,8 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-
+                <h4>Responses:</h4>
+               
 
 				<?php
 				if ( comments_open() || get_comments_number() ) :
@@ -92,6 +93,7 @@
 				if ( $comments ) {
 					foreach ( $comments as $comment ) {
 						?>
+
                         <div class="response-block response-id-<?php echo $comment->comment_ID; ?>">
                             <div class="row">
                                 <div class="response-block__wrapper">

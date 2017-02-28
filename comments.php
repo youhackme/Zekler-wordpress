@@ -4,9 +4,24 @@ if ( post_password_required() ) {
 }
 
 $args = [
-	//'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>',
+	'fields'              => [
+		'author' => '<div class="form-group comment-form-author">
+                <label for="author">Name <span class="required">*</span></label>
+                <input id="author" class="form-control" name="author" type="text" value="" size="30" maxlength="245" aria-required=\'true\'
+                        required=\'required\'/>
+            </div>',
+		'email'  => '<div class=" form-group comment-form-email">
+                <label for="email">Email <span class="required">*</span></label>
+                <input id="email" class="form-control" name="email" type="text" value="" size="30" maxlength="100"
+                       aria-describedby="email-notes" aria-required=\'true\' required=\'required\'/>
+            </div>',
+		'url'    => '<div class="form-group comment-form-url">
+                <label for="url">Website</label>
+                <input id="url" class="form-control" name="url" type="text" value="" size="30" maxlength="200"/>
+            </div>',
+	],
 	'comment_field'       => '<div class="form-group"><label for="comment">' . _x( 'Your Comment',
-			'noun' ) . '</label><textarea class="form-control" name="comment"  id="comment" rows="3" placeholder="Have something to say?"></textarea></div><div class="checkbox pull-left"><label class="text-muted"><input type="checkbox"> Notify me of replies</label></div>',
+			'noun' ) . '</label><textarea class="form-control" name="comment"  id="comment" rows="3" placeholder="Have something to say?"></textarea></div>',
 	'action'              => site_url( '/wp-comments-post.php' ),
 	'id_form'             => 'commentform',
 	'id_submit'           => 'submit',
@@ -27,8 +42,7 @@ $args = [
 ];
 ?>
 
-<!--
+
 <div class="comments-block">
-   <?php //comment_form( $args ); ?>
+	<?php comment_form( $args ); ?>
 </div>
--->
