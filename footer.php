@@ -6,6 +6,7 @@ $postId = $post->ID;
 <div class="share-block text-center">
     <div class="share-block__label text-muted">Share</div>
     <div class="share-block__icons">
+        <!--
         <div class="share-block__upvote">
             <a href="#">
                 <i class=" icon-angle-up remove-padding" aria-hidden="true"></i>
@@ -15,14 +16,18 @@ $postId = $post->ID;
                 <div class="text-muted"><?php echo $postId; ?></div>
             </a>
         </div>
+       -->
         <div>
-            <a title="Share on Twitter" href="#">
+            <a title="Share this on Twitter"
+               href="https://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title( $postId ) ) ?>&amp;url=<?php echo urlencode( get_permalink( $postId ) ); ?>">
                 <i class=" icon-twitter icon-outline text-muted" aria-label="true"></i>
             </a>
             <!--            <div class="text-muted">10</div>-->
         </div>
         <div>
-            <a title="Share on Facebook" href="#">
+            <a title="Share on Facebook"
+               href="http://www.facebook.com/sharer.php?u=<?php echo urlencode( get_permalink( $postId ) ); ?>&t=<?php echo urlencode( get_the_title( $postId ) ) ?>"
+               target="blank">
                 <i class=" icon-facebook icon-outline text-muted" aria-hidden="true"></i>
             </a>
             <!--            <div class="text-muted">15</div>-->
