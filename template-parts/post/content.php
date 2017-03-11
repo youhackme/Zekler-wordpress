@@ -1,5 +1,10 @@
+<div class="container container-small share-widget">
+    <main class="content col-md-12">
+
+        <!--
 <div class="container share-widget">
-    <main class="content col-md-8 bigger-col-md-8">
+   <main class="content col-md-8 bigger-col-md-8">
+   -->
         <header>
             <div class="row meta-block">
                 <div class="col-md-1">
@@ -35,13 +40,13 @@
 			?>
         </article>
         <footer>
-            <div class="row">
-                <div class="tags-block">
-                    <a href="#">Windows</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
+            <!-- <div class="row">
+				 <div class="tags-block">
+					 <a href="#">Windows</a>
+					 <a href="#">Facebook</a>
+					 <a href="#">Twitter</a>
+				 </div>
+			 </div>-->
             <hr>
             <div class="row">
                 <div class="biography-block">
@@ -55,7 +60,7 @@
             </div>
         </footer>
     </main>
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 </div>
 <div class="container-fluid darker-bg">
     <div class="container">
@@ -69,7 +74,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h4>Responses:</h4>
-               
+
 
 				<?php
 				if ( comments_open() || get_comments_number() ) :
