@@ -19,15 +19,15 @@ get_header();
             <?php } ?>
                 <section class="col-md-4 articles-block__tip">
                     <article>
-                        <a href="#">
+                        <a href="<?php the_permalink(); ?>">
                             <?php if (has_post_thumbnail()) {
-                                the_post_thumbnail('medium', ['class' => 'img-responsive']);
+                                the_post_thumbnail('featured-image', ['class' => 'img-responsive']);
                             } ?>
-                        </a>
+
                         <h4>
-                            <a href="<?php the_permalink(); ?>">
+
                                 <?php the_title(); ?>
-                            </a>
+
                             <?php
                             $categories = get_the_category();
                             $slug = $categories[0]->slug;
@@ -40,6 +40,7 @@ get_header();
                             </span>
                             </small>
                         </h4>
+                        </a>
                     </article>
                     <footer class="meta">
                         <div class="articles-block__totallove">
@@ -60,11 +61,11 @@ get_header();
             <?php endwhile; ?>
 
         </main>
-    <div class="container">
+    <!--<div class="container">
         <div class="row text-center load-more-block">
             <a class="btn btn-default btn-lg btn-outline">Show Me More Tips</a>
         </div>
-    </div>
+    </div>-->
     </div>
 
 <?php
