@@ -39,6 +39,13 @@ function ZeklerScript() {
 }
 
 
+function deregister_scripts(){
+	wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'deregister_scripts' );
+
+
+
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
