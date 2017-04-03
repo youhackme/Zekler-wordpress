@@ -53,13 +53,13 @@
 
 </article>
 <footer>
-    <div class="row">
-        <div class="tags-block">
-            <a href="#">Windows</a>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-        </div>
-    </div>
+    <!-- <div class="row">
+		 <div class="tags-block">
+			 <a href="#">Windows</a>
+			 <a href="#">Facebook</a>
+			 <a href="#">Twitter</a>
+		 </div>
+	 </div>-->
     <hr>
     <div class="row">
         <div class="biography-block">

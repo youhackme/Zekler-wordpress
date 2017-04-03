@@ -6,6 +6,7 @@ var minifyCss = require("gulp-minify-css");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 const eslint = require('gulp-eslint');
+var critical = require('critical');
 
 
 var autoprefixerOptions = {
@@ -73,7 +74,7 @@ gulp.task('sass', function () {
         .pipe(sass()) // Using gulp-sass
         .pipe(rename({suffix: '.min'}))
         .pipe(autoprefixer(autoprefixerOptions))
-       // .pipe(minifyCss())
+        // .pipe(minifyCss())
         .pipe(gulp.dest('build/css/'))
 });
 
@@ -117,12 +118,24 @@ gulp.task('lint', function () {
 });
 
 
-
-
 // default task
 gulp.task('dev', ['sass', 'javascript', 'fonts', 'bootstrap', 'img'], function () {
     gulp.watch(scss.watch, ['sass']);
     gulp.watch(js.watch, ['javascript']);
 });
+
+
+gulp.task('critical', function () {
+    critical.generate({
+        inline: true,
+        base: 'dist/',
+        src: 'index.html',
+        dest: 'index-critical.html',
+        minify: true,
+        width: 1300,
+        height: 900
+    });
+});
+
 
 gulp.task('gitlab', ['sass', 'javascript', 'fonts', 'bootstrap', 'img']);

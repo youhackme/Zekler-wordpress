@@ -1,4 +1,4 @@
-image: darktips
+image: registry.gitlab.com/youhackme/zekler-wordpress:latest
 stages:
   - deploy
 before_script:
@@ -14,11 +14,11 @@ demo:
     - npm install
     - gulp gitlab
     # Push source files to server
-    - rsync -rave ssh  --exclude-from '.rsyncignore' ./ hyder@163.172.90.99:/var/www/zekler
+    - rsync -rave ssh  --exclude-from '.rsyncignore' ./ hyder@163.172.90.99:/var/www/zekler.darktips.com/public_html/wp-content/themes/zekler
 
   environment:
     name: WIP
-    url: http://zekler.darktips.com/
+    url: https://zekler.darktips.com/
   only:
     - master
     - wordpress

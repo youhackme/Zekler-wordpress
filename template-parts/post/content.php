@@ -1,5 +1,10 @@
+<div class="container container-small share-widget">
+    <main class="content col-md-12">
+
+        <!--
 <div class="container share-widget">
-    <main class="content col-md-8 bigger-col-md-8">
+   <main class="content col-md-8 bigger-col-md-8">
+   -->
         <header>
             <div class="row meta-block">
                 <div class="col-md-1">
@@ -28,20 +33,20 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
 			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'zekler' ),
 				get_the_title()
 			) );
 			$postID = get_the_ID();
 			?>
         </article>
         <footer>
-            <div class="row">
-                <div class="tags-block">
-                    <a href="#">Windows</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
+            <!-- <div class="row">
+				 <div class="tags-block">
+					 <a href="#">Windows</a>
+					 <a href="#">Facebook</a>
+					 <a href="#">Twitter</a>
+				 </div>
+			 </div>-->
             <hr>
             <div class="row">
                 <div class="biography-block">
@@ -55,7 +60,7 @@
             </div>
         </footer>
     </main>
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 </div>
 <div class="container-fluid darker-bg">
     <div class="container">
@@ -68,26 +73,14 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="comments-block">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="comment">Your comment:</label>
-                            <textarea class="form-control" id="comment" rows="3"
-                                      placeholder="Have something to say?">
-                            </textarea>
-                        </div>
+                <h4>Responses:</h4>
 
-                        <div class="checkbox pull-left">
-                            <label class="text-muted">
-                                <input type="checkbox"> Notify me of replies
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-outline pull-right col-md-3 ">Answer
-                        </button>
-                    </form>
 
-                </div>
-
+				<?php
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+				?>
 
 				<?php
 				$args = [
@@ -105,6 +98,7 @@
 				if ( $comments ) {
 					foreach ( $comments as $comment ) {
 						?>
+
                         <div class="response-block response-id-<?php echo $comment->comment_ID; ?>">
                             <div class="row">
                                 <div class="response-block__wrapper">
@@ -136,8 +130,6 @@
 						<?php
 
 					}
-				} else {
-					echo 'No comments found.';
 				}
 				?>
 
